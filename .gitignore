@@ -1,0 +1,16 @@
+abi/
+artifacts/
+flatten/
+cache/
+coverage/
+exports/
+node_modules/
+types/
+deploy/
+deployments/
+package-lock.json
+coverage.json
+.env
+.DS_Store
+.vscode/
+

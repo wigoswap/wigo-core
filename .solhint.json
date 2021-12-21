@@ -1,0 +1,16 @@
+{
+  "extends": "solhint:default",
+  "plugins": ["prettier"],
+  "rules": {
+    "not-rely-on-time": "off",
+    "avoid-call-value": "off",
+    "compiler-version": "off",
+    "prettier/prettier": "off",
+    "max-line-length": "off",
+    "avoid-suicide": "error",
+    "avoid-sha3": "warn",
+    "code-complexity": ["warn", 7],
+    "max-states-count": ["error", 18],
+    "quotes": ["warn", "double"]
+  }
+}
