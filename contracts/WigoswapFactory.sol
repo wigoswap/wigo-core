@@ -14,6 +14,9 @@ contract WigoswapFactory is IWigoswapFactory {
     mapping(address => mapping(address => address)) public override getPair;
     address[] public override allPairs;
 
+    event SetFeeTo(address indexed sender, address indexed feeTo);
+    event SetFeeToSetter(address indexed sender, address indexed feeToSetter);
+
     event PairCreated(
         address indexed token0,
         address indexed token1,
@@ -59,10 +62,12 @@ contract WigoswapFactory is IWigoswapFactory {
     function setFeeTo(address _feeTo) external override {
         require(msg.sender == feeToSetter, "Wigoswap: FORBIDDEN");
         feeTo = _feeTo;
+        emit SetFeeTo(msg.sender, _feeTo);
     }
 
     function setFeeToSetter(address _feeToSetter) external override {
         require(msg.sender == feeToSetter, "Wigoswap: FORBIDDEN");
         feeToSetter = _feeToSetter;
+        emit SetFeeToSetter(msg.sender, _feeToSetter);
     }
 }
