@@ -121,6 +121,7 @@ contract WigoswapPair is WigoswapERC20 {
         emit Sync(reserve0, reserve1);
     }
 
+    // TODO: Review this step to ensure smooth migration to Sonic 
     // if fee is on, mint liquidity equivalent to 1/19 of the growth in sqrt(k)
     function _mintFee(uint112 _reserve0, uint112 _reserve1)
         private
@@ -251,6 +252,7 @@ contract WigoswapPair is WigoswapERC20 {
             amount0In > 0 || amount1In > 0,
             "Wigoswap: INSUFFICIENT_INPUT_AMOUNT"
         );
+        // TODO: Review this step to ensure smooth migration to Sonic 
         {
             // scope for reserve{0,1}Adjusted, avoids stack too deep errors
             uint256 balance0Adjusted = balance0.mul(10000).sub(

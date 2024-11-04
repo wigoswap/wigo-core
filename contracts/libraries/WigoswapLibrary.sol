@@ -20,6 +20,7 @@ library WigoswapLibrary {
         require(token0 != address(0), "WigoswapLibrary: ZERO_ADDRESS");
     }
 
+    // TODO: Review this step to ensure smooth migration to Sonic
     // calculates the CREATE2 address for a pair without making any external calls
     function pairFor(
         address factory,
@@ -70,6 +71,7 @@ library WigoswapLibrary {
         amountB = amountA.mul(reserveB) / reserveA;
     }
 
+    // TODO: Review this step to ensure smooth migration to Sonic
     // given an input amount of an asset and pair reserves, returns the maximum output amount of the other asset
     function getAmountOut(
         uint256 amountIn,
@@ -87,6 +89,7 @@ library WigoswapLibrary {
         amountOut = numerator / denominator;
     }
 
+    // TODO: Review this step to ensure smooth migration to Sonic
     // given an output amount of an asset and pair reserves, returns a required input amount of the other asset
     function getAmountIn(
         uint256 amountOut,
